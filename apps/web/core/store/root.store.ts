@@ -68,6 +68,9 @@ import { ThemeStore } from "./theme.store";
 import type { IUserStore } from "./user";
 import { UserStore } from "./user";
 import type { IWorkspaceRootStore } from "./workspace";
+// memoyi store
+import type { IAgentSessionStore } from "./memoyi/agent-session.store";
+import { AgentSessionStore } from "./memoyi/agent-session.store";
 
 enableStaticRendering(typeof window === "undefined");
 
@@ -101,6 +104,8 @@ export class CoreRootStore {
   editorAssetStore: IEditorAssetStore;
   workItemFilters: IWorkItemFilterStore;
   powerK: IPowerKStore;
+  // memoyi stores
+  agentSession: IAgentSessionStore;
 
   constructor() {
     this.router = new RouterStore();
@@ -132,6 +137,8 @@ export class CoreRootStore {
     this.analytics = new AnalyticsStore();
     this.workItemFilters = new WorkItemFilterStore();
     this.powerK = new PowerKStore();
+    // memoyi stores
+    this.agentSession = new AgentSessionStore(this);
   }
 
   resetOnSignOut() {

@@ -5,6 +5,7 @@
  */
 
 import {
+  AiIcon,
   AnalyticsIcon,
   ArchiveIcon,
   CycleIcon,
@@ -40,5 +41,7 @@ export const getSidebarNavigationItemIcon = (key: string, className: string = ""
       return <ArchiveIcon className={cn("size-4 flex-shrink-0", className)} />;
     case "stickies":
       return <MultipleStickyIcon className={cn("size-4 flex-shrink-0", className)} />;
+    case "agents":
+      return <AiIcon className={cn("size-4 flex-shrink-0", className)} />;
   }
 };

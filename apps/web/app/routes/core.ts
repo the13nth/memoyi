@@ -67,6 +67,19 @@ export const coreRoutes: RouteConfigEntry[] = [
           route(":workspaceSlug/active-cycles", "./(all)/[workspaceSlug]/(projects)/active-cycles/page.tsx"),
         ]),
 
+        // Agents
+        layout("./(all)/[workspaceSlug]/(projects)/agents/layout.tsx", [
+          route(":workspaceSlug/agents", "./(all)/[workspaceSlug]/(projects)/agents/page.tsx"),
+        ]),
+
+        // Agents - Session Detail
+        layout("./(all)/[workspaceSlug]/(projects)/agents/[sessionId]/layout.tsx", [
+          route(
+            ":workspaceSlug/agents/:sessionId",
+            "./(all)/[workspaceSlug]/(projects)/agents/[sessionId]/page.tsx"
+          ),
+        ]),
+
         // Analytics
         layout("./(all)/[workspaceSlug]/(projects)/analytics/[tabId]/layout.tsx", [
           route(":workspaceSlug/analytics/:tabId", "./(all)/[workspaceSlug]/(projects)/analytics/[tabId]/page.tsx"),
